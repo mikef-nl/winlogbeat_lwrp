@@ -5,6 +5,8 @@ property :version, String, default: '5.4.0'
 property :bit, String, default: 'x86_64'
 property :install_path, String, default: "#{ENV['SystemDrive']}/Program Files/Winlogbeat"
 property :custom_url, String
+property :conf_cookbook, String, default: 'winlogbeat_lwrp'
+property :conf_template_source, String, default: 'winlogbeat.yml.erb'
 
 action :create do
   archive_url =
@@ -35,6 +37,12 @@ action :create do
 
   service 'winlogbeat' do
     action [:enable, :start]
+  end
+
+  template "#{winlogbeat_dir}/winlogbeat.yml" do
+    cookbook conf_cookbook
+    source conf_template_source
+    notifies :restart, 'service[winlogbeat]', :immediately
   end
 end
 
