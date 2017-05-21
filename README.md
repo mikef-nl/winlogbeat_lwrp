@@ -1,3 +1,6 @@
+
+[Build status](https://ci.appveyor.com/api/projects/status/github/postgred/winlogbeat_lwrp?branch=master&svg=true)
+
 # winlogbeat_lwrp cookbook
 [winlogbeat](https://www.elastic.co/products/beats/winlogbeat) is a lightweight shipper for Windows Event Logs. This cookbook provide LWRP for installing the shipper.
 

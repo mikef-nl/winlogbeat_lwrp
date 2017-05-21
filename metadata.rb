@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url       'https://github.com/postgred/winlogbeat_lwrp'
 issues_url       'https://github.com/postgred/winlogbeat_lwrp/issues'
 supports         'windows'
-version          '0.1.0'
+version          '1.0.0'
 
 depends          'windows'
 
