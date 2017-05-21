@@ -23,4 +23,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[winlogbeat_lwrp::default]
+      - recipe[test::default]
