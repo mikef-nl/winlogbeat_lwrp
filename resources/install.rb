@@ -11,7 +11,8 @@ property :conf_template_source, String, default: 'winlogbeat.yml.erb'
 action :create do
   archive_url =
     if custom_url.nil?
-      "https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-#{version}-windows-#{bit}.zip" else
+      "https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-#{version}-windows-#{bit}.zip"
+    else
       custom_url
     end
   archive_path = "#{Chef::Config[:file_cache_path]}/winlogbeat-#{version}-#{bit}.zip"
