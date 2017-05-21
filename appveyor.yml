@@ -1,0 +1,25 @@
+environment:
+  machine_user: vagrant
+  machine_pass: vagrant
+  KITCHEN_YAML: .kitchen.appveyor.yml
+
+branches:
+  only:
+    - master
+
+skip_tags: true
+
+clone_depth: 1
+
+install:
+  - ps: . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -version 12
+
+build_script:
+  - ps: c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex; cmd /c c:\opscode\chefdk\bin\chef.bat --version
+
+test_script:
+  - c:\opscode\chefdk\bin\cookstyle --version
+  - c:\opscode\chefdk\bin\chef.bat exec foodcritic --version
+  - c:\opscode\chefdk\bin\chef.bat exec kitchen verify
+
+deploy: off
