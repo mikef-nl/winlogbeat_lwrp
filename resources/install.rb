@@ -12,7 +12,6 @@ action :create do
       "https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-#{version}-windows-#{bit}.zip" else
       custom_url
     end
-
   archive_path = "#{Chef::Config[:file_cache_path]}/winlogbeat-#{version}-#{bit}.zip"
   winlogbeat_dir = "#{install_path}/winlogbeat-#{version}-windows-#{bit}"
 
@@ -36,5 +35,25 @@ action :create do
 
   service 'winlogbeat' do
     action [:enable, :start]
+  end
+end
+
+action :delete do
+  winlogbeat_dir = "#{install_path}/winlogbeat-#{version}-windows-#{bit}"
+
+  service 'winlogbeat' do
+    action [:disable, :stop]
+    only_if { ::Win32::Service.exists?('winlogbeat') }
+  end
+
+  execute 'remove winlogbeat service' do
+    cwd winlogbeat_dir
+    command 'powershell ./uninstall-service-winlogbeat.ps1'
+    only_if { ::Win32::Service.exists?('winlogbeat') }
+  end
+
+  directory winlogbeat_dir do
+    recursive true
+    action :delete
   end
 end
