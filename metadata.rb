@@ -1,10 +1,14 @@
-name 'winlogbeat_lwrp'
-maintainer 'Andrey Aleksandrov'
+name             'winlogbeat_lwrp'
+maintainer       'Andrey Aleksandrov'
 maintainer_email 'postgred@gmail.com'
-license 'MIT'
-description 'Installs/Configures winlogbeat_lwrp'
-long_description 'Installs/Configures winlogbeat_lwrp'
-version '0.1.0'
-chef_version '>= 12.1' if respond_to?(:chef_version)
+license          'MIT'
+description      'LWRP for winlogbeat(shipper for Elasticsearch & Logstash)'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+source_url       'https://github.com/postgred/winlogbeat_lwrp'
+issues_url       'https://github.com/postgred/winlogbeat_lwrp/issues'
+supports         'windows'
+version          '0.1.0'
 
-depends 'windows'
+depends          'windows'
+
+chef_version     '>= 12.1' if respond_to?(:chef_version)
