@@ -12,7 +12,7 @@ skip_tags: true
 clone_depth: 1
 
 install:
-  - ps: . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; Install-Project -Project chefdk -channel stable -version 1.2.20
+  - ps: iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -channel stable -version 1.2.22
   - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
   - ps: $PSVersionTable
   - c:\opscode\chefdk\bin\chef.bat exec ruby --version
