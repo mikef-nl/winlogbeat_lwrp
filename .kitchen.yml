@@ -18,7 +18,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: windows-2012r2
+  - name: win2012r2
+    driver:
+      box: postgred/win2012r2-standard-nocm
 
 suites:
   - name: default

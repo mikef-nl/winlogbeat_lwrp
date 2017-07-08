@@ -13,9 +13,9 @@ provisioner:
   require_chef_omnibus: 12
 
 platforms:
-  - name: windows-2012R2
+  - name: win2012r2
     driver:
-      box: mwrock/Windows2012R2
+      box: postgred/win2012r2-standard-nocm
 
 verifier:
   name: inspec
