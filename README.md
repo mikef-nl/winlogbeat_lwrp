@@ -23,7 +23,7 @@ Install winlogbeat to the specified destination directory and overwrite a config
 - `:delete` - Delete winlogbeat
 
 #### Attribute Parameters
-- `version` - Version of winlogbeat. Default is 5.4.0.
+- `version` - Version of winlogbeat. Default is 8.3.3.
 - `bit` - Architecture of Windows(x86_64/x86). Default is x86_64.
 - `install_path` - The directory path to install winlogbeat.
 - `custom_url` - Url for downloading an archive of winlogbeat.
@@ -31,7 +31,7 @@ Install winlogbeat to the specified destination directory and overwrite a config
 - `conf_template_source` - Name of an erb template for winlogbeat.yml
 
 #### Examples
-Install winlogbeat `5.4.0` in a wrapper.
+Install winlogbeat `8.3.3` in a wrapper.
 
 * Create wrapper(logs-wrapper)
 * Add template for winlogbeat.yml
@@ -39,7 +39,7 @@ Install winlogbeat `5.4.0` in a wrapper.
 
 ```ruby
 winlogbeat_install '' do
-  version '5.4.0'
+  version '8.3.3'
   conf_cookbook 'logs-wrapper'
   conf_template 'winlogbeat.yml.erb'
 end
