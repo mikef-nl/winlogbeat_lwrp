@@ -43,14 +43,14 @@ platforms:
 suites:
   - name: client
     run_list:
-      - recipe[sql_server::default]
+      - recipe[winlogbeat_lwrp::install]
     attributes: {sql_server: {accept_eula: true}}
     verifier:
       controls:
         - client
   - name: server2012
     run_list:
-      - recipe[sql_server::server]
+      - recipe[winlogbeat_lwrp::install]
     attributes: {sql_server: {accept_eula: true, version: 2012, server_sa_password: Supersecurepassword123}}
     verifier:
       controls:
@@ -59,7 +59,7 @@ suites:
         version: 2012
   - name: server2016
     run_list:
-      - recipe[sql_server::server]
+      - recipe[winlogbeat_lwrp::install]
     attributes: {sql_server: {accept_eula: true, version: 2016, server_sa_password: Supersecurepassword123}}
     verifier:
       controls:
@@ -68,7 +68,7 @@ suites:
         version: 2016
   - name: server2017
     run_list:
-      - recipe[sql_server::server]
+      - recipe[winlogbeat_lwrp::install]
     attributes: {sql_server: {accept_eula: true, version: 2017, server_sa_password: Supersecurepassword123}}
     verifier:
       controls:
@@ -77,7 +77,7 @@ suites:
         version: 2017
   - name: server2019
     run_list:
-      - recipe[sql_server::server]
+      - recipe[winlogbeat_lwrp::install]
     attributes: {sql_server: {accept_eula: true, version: 2019, server_sa_password: Supersecurepassword123}}
     verifier:
       controls:
