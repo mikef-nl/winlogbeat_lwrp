@@ -45,10 +45,8 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: Install Homebrew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      - name: Install Virtualbox
-        run: brew install --cask virtualbox
       - name: Install Vagrant
-        run: brew install --cask vagrant
+        run: brew install vagrant
       - name: test-kitchen
         uses: actionshub/test-kitchen@main
         env:
