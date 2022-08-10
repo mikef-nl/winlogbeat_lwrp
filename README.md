@@ -1,8 +1,8 @@
 [![Cookbook version](https://img.shields.io/cookbook/v/winlogbeat_lwrp.svg)](https://supermarket.chef.io/cookbooks/winlogbeat_lwrp)
 
 # winlogbeat_lwrp cookbook
-[winlogbeat](https://www.elastic.co/products/beats/winlogbeat) is a lightweight shipper for Windows Event Logs.\
-This cookbook provide LWRP for installing the shipper.
+[winlogbeat](https://www.elastic.co/products/beats/winlogbeat) is a lightweight\
+shipper for Windows Event Logs. This cookbook provide LWRP for installing the shipper.
 
 # Requirements
 ## Platforms
@@ -19,7 +19,8 @@ This cookbook provide LWRP for installing the shipper.
 # Resource/Provider
 ## winlogbeat_install
 
-Install winlogbeat to the specified destination directory and overwrite a config by template.
+Install winlogbeat to the specified destination directory and overwrite a\
+config by template.
 
 ### Actions
 
