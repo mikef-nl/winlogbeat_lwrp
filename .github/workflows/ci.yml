@@ -8,14 +8,6 @@ name: ci
       - master
 
 jobs:
-  yamllint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Run yaml Lint
-        uses: actionshub/yamllint@main
-
   mdl:
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +19,7 @@ jobs:
   # This needs to run on vagrant due to the fact these nodes reboot during their
   # runs
   integration:
-    needs: [mdl, yamllint]
+    needs: [mdl]
     runs-on: macos-latest
     strategy:
       matrix:
