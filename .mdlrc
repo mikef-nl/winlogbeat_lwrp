@@ -1,1 +1,2 @@
-rules "~MD013", "~MD024", "~MD025"
+rules "MD013", "MD024", "MD025"
+rule 'MD004', :consistent

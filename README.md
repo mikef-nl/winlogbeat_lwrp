@@ -1,5 +1,4 @@
 [![Cookbook version](https://img.shields.io/cookbook/v/winlogbeat_lwrp.svg)](https://supermarket.chef.io/cookbooks/winlogbeat_lwrp)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/postgred/winlogbeat_lwrp?branch=master&svg=true)](https://ci.appveyor.com/project/postgred/winlogbeat-lwrp/branch/master)
 
 # winlogbeat_lwrp cookbook
 [winlogbeat](https://www.elastic.co/products/beats/winlogbeat) is a lightweight shipper for Windows Event Logs. This cookbook provide LWRP for installing the shipper.
@@ -21,12 +20,12 @@
 
 Install winlogbeat to the specified destination directory and overwrite a config by template.
 
-#### Actions
+### Actions
 
 * `:create` - Install winlogbeat and configure
 * `:delete` - Delete winlogbeat
 
-#### Attribute Parameters
+### Attribute Parameters
 
 * `version` - Version of winlogbeat. Default is 8.3.3.
 * `bit` - Architecture of Windows(x86_64/x86). Default is x86_64.
@@ -35,7 +34,7 @@ Install winlogbeat to the specified destination directory and overwrite a config
 * `conf_cookbook` - A cookbook with configuration templates.
 * `conf_template_source` - Name of an erb template for winlogbeat.yml
 
-#### Examples
+### Examples
 
 Install winlogbeat `8.3.3` in a wrapper.
 
