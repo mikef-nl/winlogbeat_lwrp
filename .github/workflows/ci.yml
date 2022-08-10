@@ -46,9 +46,9 @@ jobs:
       - name: Install Homebrew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Install Virtualbox
-        run: brew cask install virtualbox
+        run: brew install --cast virtualbox
       - name: Install Vagrant
-        run: brew cask install vagrant
+        run: brew install --cast vagrant
       - name: test-kitchen
         uses: actionshub/test-kitchen@main
         env:
