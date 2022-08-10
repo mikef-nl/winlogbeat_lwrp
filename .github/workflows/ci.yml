@@ -44,8 +44,7 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: Install Vagrant
-        run: sudo apt install virtualbox;
-             wget https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.deb;
+        run: wget https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.deb;
              sudo apt install ./vagrant_2.2.19_x86_64.deb
       - name: test-kitchen
         uses: actionshub/test-kitchen@main
