@@ -9,28 +9,34 @@
 - Windows
 
 ## Chef
+
 - Chef >= 12
 
 ## Cookbooks
+
 - windows
 
 # Resource/Provider
 ## winlogbeat_install
+
 Install winlogbeat to the specified destination directory and overwrite a config by template.
 
 #### Actions
-- `:create` - Install winlogbeat and configure
-- `:delete` - Delete winlogbeat
+
+* `:create` - Install winlogbeat and configure
+* `:delete` - Delete winlogbeat
 
 #### Attribute Parameters
-- `version` - Version of winlogbeat. Default is 8.3.3.
-- `bit` - Architecture of Windows(x86_64/x86). Default is x86_64.
-- `install_path` - The directory path to install winlogbeat.
-- `custom_url` - Url for downloading an archive of winlogbeat.
-- `conf_cookbook` - A cookbook with configuration templates.
-- `conf_template_source` - Name of an erb template for winlogbeat.yml
+
+* `version` - Version of winlogbeat. Default is 8.3.3.
+* `bit` - Architecture of Windows(x86_64/x86). Default is x86_64.
+* `install_path` - The directory path to install winlogbeat.
+* `custom_url` - Url for downloading an archive of winlogbeat.
+* `conf_cookbook` - A cookbook with configuration templates.
+* `conf_template_source` - Name of an erb template for winlogbeat.yml
 
 #### Examples
+
 Install winlogbeat `8.3.3` in a wrapper.
 
 * Create wrapper(logs-wrapper)

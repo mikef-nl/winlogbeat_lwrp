@@ -8,23 +8,6 @@ name: ci
       - master
 
 jobs:
-  delivery:
-    # This needs to run on a Windows host due to expecting windows paths in tests
-    runs-on: windows-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Install Chef
-        uses: actionshub/chef-install@main
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      - name: Run Chef Delivery
-        run: |
-          chef exec delivery local all
-        env:
-          CHEF_LICENSE: accept-no-persist
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-
   yamllint:
     runs-on: ubuntu-latest
     steps:
@@ -44,7 +27,7 @@ jobs:
   # This needs to run on vagrant due to the fact these nodes reboot during their
   # runs
   integration:
-    needs: [mdl, yamllint, delivery]
+    needs: [mdl, yamllint]
     runs-on: macos-latest
     strategy:
       matrix:
@@ -53,12 +36,9 @@ jobs:
           - 'windows-2016'
           - 'windows-2019'
         suite:
-          - 'client'
-          - 'install'
-          - 'server2012'
-          - 'server2016'
-          - 'server2017'
-          - 'server2019'
+          - 'chef-15'
+          - 'chef-16'
+          - 'chef-17'
         exclude:
           - os: windows-2012r2
             suite: server2019
